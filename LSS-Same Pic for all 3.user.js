@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Same Pic for all 3
 // @namespace    Leitstellenspiel - Alle Grafiken mit einem Klick hochladen
-// @version      1
+// @version      2
 // @description  Mit einem Klick alle Grafiken für eine Mission hochladen statt einzeln auswählen zu müssen
 // @author       MissSobol
 // @match        https://www.leitstellenspiel.de/mission_graphics/*/mission_graphic_images/*/edit
@@ -9,52 +9,8 @@
 // ==/UserScript==
 
 
-// Funktion zum Hochladen des Bildes in alle 3 Inputs
-function uploadToAll() {
-  // prüfen, ob ein Bild ausgewählt wurde
-  if (!greenFile) {
-    console.log("Kein Bild ausgewählt");
-    return;
-  }
-  // Grün-Input füllen
-  greenInput.files = greenFile;
-  console.log("Grün: " + greenFile[0].name);
-  // 500ms warten
-  setTimeout(function() {
-    // Gelb-Input füllen
-    yellowInput.files = greenFile;
-    console.log("Gelb: " + greenFile[0].name);
-    // 500ms warten
-    setTimeout(function() {
-      // Rot-Input füllen
-      redInput.files = greenFile;
-      console.log("Rot: " + greenFile[0].name);
-    }, 500);
-  }, 500);
-}
-
-// Button erstellen
-const uploadToAllButton = document.createElement("button");
-uploadToAllButton.innerHTML = "In allen hochladen";
-uploadToAllButton.onclick = uploadToAll;
-
-// Formular finden
-const form = document.getElementById("new_mission_graphic_image");
-
-// Button vor dem Formular einfügen
-form.parentNode.insertBefore(uploadToAllButton, form);
-
-// Input-Felder finden
-const greenInput = document.getElementById("mission_graphic_image_green_image");
-const yellowInput = document.getElementById("mission_graphic_image_yellow_image");
-const redInput = document.getElementById("mission_graphic_image_red_image");
-
-// Variable zum Speichern des Bildes
-let greenFile;
-
-// Grün-Input überwachen
-greenInput.addEventListener("change", function(event) {
-  // Bild auslesen
-  greenFile = event.target.files;
-  console.log("Bild ausgewählt: " + greenFile[0].name);
-});
+//Lieber Scriptnutzer,
+//schweren Herzens habe ich heute alle meine Scripte deaktiviert. Der Betreiber hat mir meinen Forenaccount gesperrt, will mir aber weder verraten warum, noch ist man gewillt in Diskurs mit mir zu treten. Da ich ohne einen Forenaccount nicht das Level an Support geben kann, welches ich für mich selber als erforderlich betrachte, habe ich mit sofortiger Wirkung alle meine Scripte deaktiviert.
+//Ich bedanke mich für 5 Jahre Zusammenarbeit im Forum. Danke an alle, die meine Scripte genutzt haben, Daumen dagelassen haben und Kommentare geschrieben haben.
+//Liebe Grüße und noch viel Spaß
+//Sobol
